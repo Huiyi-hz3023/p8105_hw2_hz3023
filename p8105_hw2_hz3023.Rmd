@@ -18,7 +18,7 @@ pols_df=
     names_prefix = "prez_"
   ) |> 
    mutate(
-     month= match(month, month.abb),
+     month = as.integer(month),
      year= as.integer(year))|> 
   select(year, month, gov_gop, sen_gop, rep_gop,gov_dem, rep_dem, president )
 ```
@@ -58,3 +58,4 @@ merged_df =
   left_join(unemployment_df, by = c("year", "month"))
 ```
 
+**
